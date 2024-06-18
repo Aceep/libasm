@@ -1,3 +1,4 @@
 libasmTester
 objs
 a.out
+libasm.a
