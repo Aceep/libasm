@@ -12,9 +12,13 @@ OBJS = $(SRCS:%.s=$(OBJS_DIR)/%.o)
 
 ASM = nasm -felf64
 CC = clang
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fPIE -pie
 
 all: $(NAME)
+
+tester: re
+	@$(CC) $(CFLAGS) -o tester main.c -L. -lasm
+	@./tester
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
@@ -30,6 +34,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f tester
 
 re: fclean all
 
