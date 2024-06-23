@@ -8,7 +8,6 @@ int main() {
     size_t length = ft_strlen(test_str);
     printf("The length of the string is: %zu\n", length);
     ft_write(1, test_str, length);
-    ft_write(1, "\n", 1);
-    ft_write(1, "", 14);
+
     return 0;
 }

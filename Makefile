@@ -17,7 +17,7 @@ CFLAGS = -Wall -Werror -Wextra -fPIE -pie
 all: $(NAME)
 
 tester: re
-	@$(CC) $(CFLAGS) -o tester main.c -L. -lasm
+	@$(CC) $(CFLAGS) -fuse-ld=gold -o tester main.c -L. -lasm
 	@./tester
 
 $(NAME): $(OBJS)

@@ -2,3 +2,4 @@ libasmTester
 objs
 a.out
 libasm.a
+libasm-smasher
